@@ -24,17 +24,17 @@ def read_first_sentence(file_path):
                 try:
                     lang = langdetect.detect(word)
                     if lang == 'uk':
-                        ukrainian_words.append(word.lower())
+                        ukrainian_words.append(word)
                     elif lang == 'en':
-                        english_words.append(word.lower())
+                        english_words.append(word)
                     else:
-                        other_words.append(word.lower())
+                        other_words.append(word)
                 except langdetect.lang_detect_exception.LangDetectException:
                     pass  # Якщо неможливо визначити мову, пропускаємо слово
 
 
             all = ukrainian_words + english_words + other_words
-            sorted_all = sorted(all)
+            sorted_all = sorted(all, key=str.lower)
             print("\nOthers слова (по алфавіту):", sorted_all)
 
             # Виводимо загальну кількість слів
