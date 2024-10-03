@@ -33,18 +33,9 @@ def read_first_sentence(file_path):
                     pass  # Якщо неможливо визначити мову, пропускаємо слово
 
 
-            # Сортуємо українські та англійські слова
-            ukrainian_words_sorted = sorted(ukrainian_words)
-            english_words_sorted = sorted(english_words)
-            other_words_sorted = sorted(other_words)
-
-            # Виводимо відсортовані слова
-            if ukrainian_words_sorted:
-                print("\nУкраїнські слова (по алфавіту):", ukrainian_words_sorted)
-            if english_words_sorted:
-                print("\nАнглійські слова (по алфавіту):", english_words_sorted)
-            if other_words_sorted:
-                print("\nOthers слова (по алфавіту):", other_words_sorted)
+            all = ukrainian_words + english_words + other_words
+            sorted_all = sorted(all)
+            print("\nOthers слова (по алфавіту):", sorted_all)
 
             # Виводимо загальну кількість слів
             print("\nКількість слів у тексті:", len(words))
